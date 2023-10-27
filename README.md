@@ -13,10 +13,10 @@
 ### Bước 3:
 #### Import file json vừa tải ở Bước 1 vào firebase
 
-![image](https://github.com/iHoala/H2Script/assets/104571272/b5ccc46b-40a6-441b-a484-3f41ee13b15a)
+![image](https://github.com/iHoala/H2Script/assets/104571272/ca444a4d-6a42-46b4-ab81-0638fbc825f5)
 
-#### Sau đó copy firebase url và thay thế vào trong extension tại file `content.js`
+#### Sau đó copy firebase url và thay thế vào trong extension tại file `src/content.js`
 
-![image](https://github.com/iHoala/H2Script/assets/104571272/60865e8c-3104-4da1-97e9-b517bca9df3a)
+![image](https://github.com/iHoala/H2Script/assets/104571272/d49d90b8-2a1f-4a9b-a251-335abb144a10)
 
 ## Cuối cùng là tận hưởng thôi
