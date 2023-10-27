@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="src/style.css">
+    <script src="src/popup.js" defer></script>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <div class="popup">
+      <p style="padding-top: 12px;display: flex;justify-content: center;">H2Script by <a style="padding-left: 5px;" href="https://ndh.io.vn" target="_blank"> NDH</a></p>
+      <div style="display: flex;justify-content: center;align-items: center;padding-top: 18px;">
+        <h1 style="margin-right: 12px;">Block NewsFeed</h1>
+        <label class="switch">
+          <input id="blockNF" type="checkbox">
+          <span class="slider round"></span>
+        </label>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;padding-top:12px"><p style="padding-right:10px">Thời gian giữa các quote</p><input id="timeVal" type="number" value="20000" style="width:88px;border:solid orange;border-radius:5px;padding:5px 10px"></div>
+      <div class="btnContainer">
+        <button id="autoMess">Auto Mess</button>
+        <button id="color-picker">Pick Color</button>
+      </div>
+      <div class="picked-colors hide">
+        <header>
+          <p class="title">Picked colors</p>
+          <span class="clear-all">Clear All</span>
+        </header>
+        <ul class="all-colors"></ul>
+      </div>
+      <div class="autoMessctn">
+        <textarea id="uids" placeholder="danh sách facebook uid"></textarea>
+        <textarea id="contents" placeholder="nội dung tin nhắn"></textarea>
+        <input id="delay" type="number" id="delay" placeholder="time delay">
+        <button id="sS">Start send</button>
+        <h4 style="padding-top: 10px;">Xem hướng dẫn <a href="" target="_blank">tại đây</a></h4>
+        Script lấy danh sách bạn bè
+        <input type="text" value="var html=document.body.textContent;let stringger=html.split(&quot;chat_sidebar_contact_rankings&quot;)[1].split(&quot;&lt;/script&gt;&quot;)[0];text=stringger.split(&#39;{&quot;status&quot;:0&#39;);let id=&quot;&quot;,name=&quot;&quot;,uniCode=&quot;&quot;,ids={};for(let t of text)t.includes(&quot;buddy_id&quot;)&amp;&amp;(id=t.split(&#39;&quot;buddy_id&quot;:&quot;&#39;)[1].split(&#39;&quot;&#39;)[0],name=JSON.parse(&#39;&quot;&#39;+(uniCode=t.split(&#39;&quot;name&quot;:&quot;&#39;)[1].split(&#39;&quot;&#39;)[0])+&#39;&quot;&#39;),ids[id]=name);console.log(ids);"/>
+      </div>
+    </div>
+  </body>
+</html>

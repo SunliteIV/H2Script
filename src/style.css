@@ -1,0 +1,33 @@
+*{margin:0;padding:0;box-sizing:border-box}
+.popup{width:350px;background:#E3F2FD;border-radius:12px}
+.popup :where(.btnContainer,header,.all-colors){display:flex;align-items:center}
+.popup .btnContainer{border-radius:12px;padding:30px 0;background:#E3F2FD;justify-content:center}
+.btnContainer #color-picker{border:none;outline:none;color:#fff;font-size:1rem;cursor:pointer;padding:10px 20px;border-radius:5px;background:#5372F0;transition:.3s ease}
+#color-picker:hover{background:#2c52ed}
+.btnContainer #autoMess{border:none;outline:none;color:#fff;font-size:1rem;cursor:pointer;padding:10px 20px;border-radius:5px;background:#ff7337;transition:.3s ease;margin-right:5px}
+#autoMess:hover{background:orange}
+.picked-colors{margin:10px 15px}
+.picked-colors header{justify-content:space-between}
+header .title{font-size:1rem}
+header .clear-all{cursor:pointer;font-size:.9rem;color:#5372F0}
+header .clear-all:hover{color:#143feb}
+.picked-colors.hide{display:none}
+.picked-colors .all-colors{flex-wrap:wrap;list-style:none;margin:10px 0 15px}
+.all-colors .color{display:flex;cursor:pointer;margin-bottom:10px;width:calc(100% / 3)}
+.all-colors .rect{height:21px;width:21px;display:block;margin-right:8px;border-radius:5px}
+.all-colors .color span{font-size:.96rem;font-weight:500;text-transform:uppercase}
+.switch{position:relative;display:inline-block;width:60px;height:34px}
+.switch input{opacity:0;width:0;height:0}
+.slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background-color:#ccc;-webkit-transition:.1s;transition:.1s}
+.slider:before{position:absolute;content:"";height:26px;width:26px;left:4px;bottom:4px;background-color:#fff;-webkit-transition:.1s;transition:.1s}
+input:checked + .slider{background-color:#2196F3}
+input:focus + .slider{box-shadow:0 0 1px #2196F3}
+input:checked + .slider:before{-webkit-transform:translateX(26px);-ms-transform:translateX(26px);transform:translateX(26px)}
+.slider.round{border-radius:34px}
+.slider.round:before{border-radius:50%}
+.autoMessctn{display:none;justify-content:center;padding-bottom:18px;flex-direction:column;align-items:center}
+.autoMessctn input{width:250px;margin-bottom:5px;padding:5px 10px;border-radius:5px}
+.autoMessctn input:focus{border:solid #ff7337;outline:none}
+.autoMessctn textarea{width:333px;height:111px;margin-bottom:5px;padding:5px 10px;border-radius:5px}
+.autoMessctn textarea:focus{border:solid #ff7337;outline:none}
+#sS{border:none;outline:none;color:#fff;font-size:1rem;cursor:pointer;padding:10px 20px;border-radius:50px;background:#ff7337;transition:.3s ease;margin-right:5px}

@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "H2Script",
+  "version": "1.0",
+  "description": "Block Newsfeed, Auto Mess and Pick Color",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "webNavigation",
+    "webRequest",
+    "webRequestBlocking"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "250": "src/icons/icon.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.facebook.com/*", "*://m.facebook.com/*"],
+      "js": ["src/content.js"]
+    }
+  ],
+  "icons": {
+    "250": "src/icons/icon.png"
+  },
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": [
+    "https://www.facebook.com/",
+    "https://m.facebook.com/"
+  ]
+}
