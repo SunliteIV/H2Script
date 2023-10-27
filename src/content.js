@@ -10,7 +10,7 @@ function getQuote(t) {
 			xhr.onreadystatechange = function() {
 				if (xhr.readyState === 4 && xhr.status === 200) {
 					let quote = xhr.responseText.replaceAll('\\n', "<br>");
-					newsfeedDiv.innerHTML = `<div class="container"> <h1><q>${quote}</q></h1></div><style type="text/css">.container { border-radius: 12px; margin-top: 68px; padding: 25px; border: solid orange 3px; background: #ff7337;}.container h1 { font-size: 50px;}</style>`;
+					newsfeedDiv.innerHTML = `<div class="container"> <h1>${quote}</h1></div><style type="text/css">.container { border-radius: 12px; margin-top: 68px; padding: 25px; border: solid orange 3px; background: #ff7337;}.container h1 { font-size: 45px;}</style>`;
 				} else if (xhr.readyState === 4) {
 					console.error('Error fetching quote:', xhr.status, xhr.statusText);
 				}
@@ -58,6 +58,7 @@ function sendMsg(uid, msg, name) {
 			xhr2.onreadystatechange = function () {
 				if (xhr2.readyState === 4 && xhr2.status === 200) {
 					console.log(`[${uid}: ${name}] Thành công`)
+					chrome.runtime.sendMessage({ data: `[${uid}: ${name}] Thành công` });
 				}
 			}
 		}

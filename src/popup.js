@@ -4,6 +4,18 @@ const clearAll = document.querySelector(".clear-all");
 const colorList = document.querySelector(".all-colors");
 const pickedColors = JSON.parse(localStorage.getItem("picked-colors") || "[]");
 
+let inputElement = document.getElementById('timeVal');
+inputElement.addEventListener('input', function() {
+    let inputValue = inputElement.value;
+    localStorage.setItem('timeVal', inputValue);
+});
+window.onload = function() {
+    let savedValue = localStorage.getItem('timeVal');
+    if (savedValue) {
+        inputElement.value = savedValue;
+    }
+}
+
 const copyColor = (elem) => {
 	elem.innerText = "Copied";
 	navigator.clipboard.writeText(elem.dataset.color);
@@ -98,4 +110,10 @@ blockNFCheckbox.addEventListener('change', function() {
 			chrome.tabs.sendMessage(tabs[0].id, {action: "unblock_newsfeed"});
 		});
 	}
+});
+
+var receivedData = []
+chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
+    receivedData.push(message.data);
+    document.getElementById('contents').value = receivedData
 });
