@@ -9,7 +9,7 @@
 #### Tải Extension về và giải nén ra [https://github.com/iHoala/H2Script/archive/refs/heads/main.zip](https://github.com/iHoala/H2Script/archive/refs/heads/main.zip)
 ![image](https://blogger.googleusercontent.com/img/a/AVvXsEi_kCCIlruCNS5Cy9PPWphlSt8elhqVh-q89rwFNI4cPBcv6d0HowJrr1uo4ySDSoNil08wQOPbWkVfAXTq0e7uOXIizVibWukb37d2N_I0nvBTYyeaHMkpqpY5WIoc3QcgEmK9Au1IDSVbeUeeiKnAL3nwKkNYzLPLCMqKhpKADgjHyFZ4pe9hXUXupHE)
 ### Bước 2:
-#### Tại thanh tìm kiếm của trình duyệt gõ [chrome://extensions](chrome://extensions)
+#### Tại thanh tìm kiếm của trình duyệt gõ `chrome://extensions`
 #### Phía bên góc phải trên của trình duyệt, để ý phần `Developer mode` (Chế độ cho nhà phát triển) => bật lên
 ![image](https://blogger.googleusercontent.com/img/a/AVvXsEjkunJPntnhahCr8zHvHrYWpLkdT81bgW1gKERW0ItHKNyAXu4veRndZTmrFaAinon70ek6zYZU-ArwzNjpwBwshkeGDWdd6QrTIcE5BnYKa2yDCAGaphX0KAgHcqPboAZp8jDkSod73myZ7T5zZId8A6wuAbzBhIFDxxnjqBMwXOzo3wYQys_soQRKPWo)
 #### Tiếp theo đó bên góc trái sẽ hiện lên phần `Load Unpacked` => click vào, trỏ đến folder của Extension vừa giải nén => Select Folder
