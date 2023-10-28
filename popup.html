@@ -15,7 +15,7 @@
           <span class="slider round"></span>
         </label>
       </div>
-      <div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;padding-top:12px"><p style="padding-right:10px">Thời gian giữa các quote</p><input id="timeVal" type="number" value="20000" style="width:88px;border:solid orange;border-radius:5px;padding:5px 10px"></div>
+      <div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;padding-top:12px"><p style="padding-right:10px">Thời gian giữa các quote</p><input id="timeVal" type="number" value="" style="width:88px;border:solid orange;border-radius:5px;padding:5px 10px"></div>
       <div class="btnContainer">
         <button id="autoMess">Auto Mess</button>
         <button id="color-picker">Pick Color</button>
@@ -32,7 +32,7 @@
         <textarea id="contents" placeholder="nội dung tin nhắn"></textarea>
         <input id="delay" type="number" id="delay" placeholder="time delay">
         <button id="sS">Start send</button>
-        <h4 style="padding-top: 10px;">Xem hướng dẫn <a href="" target="_blank">tại đây</a></h4>
+        <h4 style="padding-top: 10px;">Xem hướng dẫn <a href="https://youtu.be/IBDeIA2s0wM" target="_blank">tại đây</a></h4>
         Script lấy danh sách bạn bè
         <input type="text" value="var html=document.body.textContent;let stringger=html.split(&quot;chat_sidebar_contact_rankings&quot;)[1].split(&quot;&lt;/script&gt;&quot;)[0];text=stringger.split(&#39;{&quot;status&quot;:0&#39;);let id=&quot;&quot;,name=&quot;&quot;,uniCode=&quot;&quot;,ids={};for(let t of text)t.includes(&quot;buddy_id&quot;)&amp;&amp;(id=t.split(&#39;&quot;buddy_id&quot;:&quot;&#39;)[1].split(&#39;&quot;&#39;)[0],name=JSON.parse(&#39;&quot;&#39;+(uniCode=t.split(&#39;&quot;name&quot;:&quot;&#39;)[1].split(&#39;&quot;&#39;)[0])+&#39;&quot;&#39;),ids[id]=name);console.log(ids);"/>
       </div>

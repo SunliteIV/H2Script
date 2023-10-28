@@ -1,31 +1,30 @@
 var running = false;
-var intervalId;
+var intervalId
 function getQuote(t) {
-	var newsfeedDiv = document.querySelector('div[role="main"]');
+	var newsfeedDiv = document.querySelector('div[role="main"]')
 	function updateQuote() {
-		let ranNum = Math.floor(Math.random() * 2479);
+		let ranNum = Math.floor(Math.random() * 3017)
 		if (newsfeedDiv) {
-			var xhr = new XMLHttpRequest();
-			xhr.open('GET', `https://YOUR_FIREBASE_DATATABASE_URL.firebasedatabase.app/${ranNum}.json`, true);
+			var xhr = new XMLHttpRequest()
+			xhr.open('GET', `https://YOUR_FIREBASE_DATATABASE_URL.firebasedatabase.app/${ranNum}.json`, true)
 			xhr.onreadystatechange = function() {
 				if (xhr.readyState === 4 && xhr.status === 200) {
-					let quote = xhr.responseText.replaceAll('\\n', "<br>");
-					newsfeedDiv.innerHTML = `<div class="container"> <h1>${quote}</h1></div><style type="text/css">.container { border-radius: 12px; margin-top: 68px; padding: 25px; border: solid orange 3px; background: #ff7337;}.container h1 { font-size: 45px;}</style>`;
+					let quote = xhr.responseText.replaceAll('\\n', "<br>")
+					newsfeedDiv.innerHTML = `<div class="container"> <h1>${quote}</h1><a style=" font-weight: bold; text-decoration: none; margin-top: 12px; border-radius: 50px; font-size: 15px; padding: 3px; width: 88px; background: #fff; border: solid #fff; display: flex; align-items: center; justify-content: center;" href='https://www.google.com/search?q=${quote}' target="_blank">Chi tiết</a></div><style type="text/css">.container { border-radius: 12px; margin-top: 68px; padding: 25px; border: solid orange 3px; background: #ff7337;}.container h1 { font-size: 45px;}</style>`;
 				} else if (xhr.readyState === 4) {
-					console.error('Error fetching quote:', xhr.status, xhr.statusText);
+					console.error('Error fetching quote:', xhr.status, xhr.statusText)
 				}
-			};
-			xhr.send();
+			}
+			xhr.send()
 		}
 	}
 	if (!running) {
-		running = true;
-		time = 111;
-		updateQuote();
-		intervalId = setInterval(updateQuote, Number(t));
+		running = true
+		time = 111
+		updateQuote()
+		intervalId = setInterval(updateQuote, Number(t))
 	}
 }
-
 
 function sendMsg(uid, msg, name) {
 	var xhr1 = new XMLHttpRequest()
@@ -58,7 +57,7 @@ function sendMsg(uid, msg, name) {
 			xhr2.onreadystatechange = function () {
 				if (xhr2.readyState === 4 && xhr2.status === 200) {
 					console.log(`[${uid}: ${name}] Thành công`)
-					chrome.runtime.sendMessage({ data: `[${uid}: ${name}] Thành công` });
+					chrome.runtime.sendMessage({ data: `[${uid}: ${name}] Thành công` })
 				}
 			}
 		}
@@ -67,16 +66,16 @@ function sendMsg(uid, msg, name) {
 }
 
 
-var time = 111;
+var time = 111
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 	if (request.action === "block_newsfeed") {
-		getQuote(request.value);
+		getQuote(request.value)
 	} else if (request.action === "unblock_newsfeed") {
-		clearInterval(intervalId);
-		running = false;
-		// location.reload();
+		clearInterval(intervalId)
+		running = false
+		// location.reload()
 	}
-});
+})
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 	if (request.action === 'startAutoMess') {
@@ -96,4 +95,4 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 			}
 		}
 	}
-});
+})
